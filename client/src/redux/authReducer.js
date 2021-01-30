@@ -16,7 +16,7 @@ const authReducer = (state = initialState, action) => {
 };
 
 //thunks
-
+//Is called from components/login/loginCard
 export const authUser = (data, setBody, setOpen) => {
   return dispatch => {
     loginUser(data).then(res => {
@@ -33,6 +33,7 @@ export const authUser = (data, setBody, setOpen) => {
   };
 };
 
+//Is called from components/login/signupCard
 export const signUpUser = (data, setBody, setOpen) => {
   return dispatch => {
     addUser(data).then(res => {
@@ -49,6 +50,7 @@ export const signUpUser = (data, setBody, setOpen) => {
   };
 };
 
+//Is called from components/chatboard/profilePic/profilePic
 export const addProfilePicture = (data, setIsLoading) => {
   return dispatch => {
     setIsLoading(true);

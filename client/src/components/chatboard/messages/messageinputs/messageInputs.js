@@ -36,8 +36,10 @@ const MessageInputs = () => {
       socket_id = users.filter(u => u._id === to)[0].socketId;
     }
     let socketMsg = { socket_id, chat_id, from, to, value };
-    ws.sendPrivateMessage(socketMsg);
-    dispatch({ type: "ADD_MESSAGE", socketMsg });
+    if (value) {
+      ws.sendPrivateMessage(socketMsg);
+      dispatch({ type: "ADD_MESSAGE", socketMsg });
+    }
     msgRef.current.value = "";
   };
 

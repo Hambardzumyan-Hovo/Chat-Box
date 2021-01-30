@@ -34,6 +34,7 @@ const usersReducer = (state = initialState, action) => {
 //thunks
 
 //Get all online users from socket
+//Is called from context/socketContext
 export const setOnlineUsers = res => {
   return (dispatch, getState) => {
     const state = getState();
@@ -60,6 +61,7 @@ export const setOnlineUsers = res => {
 };
 
 //Set user offline when he logs out
+//Is called from context/socketContext
 export const setUserOffline = res => {
   return (dispatch, getState) => {
     const state = getState();
@@ -73,6 +75,7 @@ export const setUserOffline = res => {
 };
 
 //Add new user when someone registers
+//Is called from context/socketContext
 export const addNewUser = res => {
   return (dispatch, getState) => {
     const state = getState();
@@ -86,6 +89,7 @@ export const addNewUser = res => {
 };
 
 //Update profile pic
+//Is called from context/socketContext
 export const updateAvatar = res => {
   return (dispatch, getState) => {
     const state = getState();

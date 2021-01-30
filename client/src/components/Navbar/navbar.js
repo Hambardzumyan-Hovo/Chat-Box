@@ -18,6 +18,7 @@ const Navbar = ({ auth }) => {
   };
 
   const handleProf = () => {
+    dispatch({ type: "EMPTY_CHAT" });
     history.push("/profile");
   };
 

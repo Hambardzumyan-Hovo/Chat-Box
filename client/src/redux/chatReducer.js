@@ -10,6 +10,9 @@ const chatReducer = (state = initialState, action) => {
     case "ADD_MESSAGE": {
       return { ...state, messages: [...state.messages, action.socketMsg] };
     }
+    case "EMPTY_CHAT": {
+      return initialState;
+    }
     default:
       return state;
   }
@@ -18,6 +21,7 @@ const chatReducer = (state = initialState, action) => {
 //thunks
 
 //Save chat info and messages
+//Is called from components/chatboard/messages/messages
 export const setChat = (id, authId, setIsLoading) => {
   return dispatch => {
     let payload = { id, authId };
@@ -34,6 +38,7 @@ export const setChat = (id, authId, setIsLoading) => {
 };
 
 //Add new messages to chat
+//Is called from context/socketContext
 export const addMessage = socketMsg => {
   return (dispatch, getState) => {
     const state = getState();
