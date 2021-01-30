@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.loader-container {
+  margin: auto;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+}
