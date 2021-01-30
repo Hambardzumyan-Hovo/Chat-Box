@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
-  .then(() => server.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
+  .then(() => console.log("db connected"))
   .catch(err => console.log(err));
 
 //Sockets
@@ -60,6 +60,8 @@ io.on("connection", socket => {
     socket.disconnect();
   });
 });
+
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const socketObject = io;
 
